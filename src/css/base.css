@@ -21,3 +21,9 @@ p[class ^= "result"] {
     color: gray;
     font-size: 15px;
 }
+
+@media (min-width: 320px) and (max-width: 425px) {
+    .rndContainer {
+        width: 65%;
+    }
+ }

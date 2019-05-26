@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rngInt = Array.from(new Array(n), () => flip() ? 1 : 0)
     .reduce((bitSum, bit) => bitSum + bit);
     
+    // MSWS 
     const seed = () => {
         let x = rngInt * rngInt; // Middle Squares
         const w = rngInt * Date.now(); // Date.now() to add more salt

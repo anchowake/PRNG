@@ -6,34 +6,31 @@ document.addEventListener('DOMContentLoaded', () => {
   function randomNumber(n) {
     const min = 0;
     const max = 1000000;
-    let randomNumber = 0;
+    let rndNumber = 0;
     
     if (n >= max || n <= min) {
       return `The input number must be between: ${min} and ${max}`;
     } else if (n === min + 1) {
-      return randomNumber;
-    }
-    
-    function MSWS(seed) {
-      let x = seed * seed; // Middle Squares
-      const w = seed * Date.now(); // Date.now() to add more salt
-      const s = 362437;
-      
-      x += (w + s); // Weyl Sequence 
-      x = String(x);
-      
-      return x.substring(x.length / 2 - 3, x.length / 2 + 3); // Retrieves the middle values of the sum string
+      return rndNumber;
     }
     
     const rngInt = Array.from(new Array(n), () => flip() ? 1 : 0)
-    .reduce((bitSum, bit) => {
-      return bitSum + bit;
-    });
+    .reduce((bitSum, bit) => bitSum + bit);
     
-    let seed = MSWS(rngInt);
-    randomNumber = Math.floor(seed / max * n);
+    const seed = () => {
+        let x = rngInt * rngInt; // Middle Squares
+        const w = rngInt * Date.now(); // Date.now() to add more salt
+        const s = 362437;
+        
+        x += (w + s); // Weyl Sequence 
+        x = String(x);
+        
+        return x.substring((x.length / 2)- 3, (x.length / 2) + 3); // Retrieves the middle values of the sum string
+    }
+
+    rndNumber = Math.floor((seed() / max) * n);
     
-    return randomNumber;
+    return rndNumber;
   }
   
   //  Fixed interval for update on the front end

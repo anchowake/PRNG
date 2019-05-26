@@ -25,7 +25,7 @@
             function MSWS (seed) {
                 let x = String(seed * seed);
                 let w = 0;
-                let s = 0x61c88647;
+                let s = Date.now();
                 
                 x += String((w + s));
 

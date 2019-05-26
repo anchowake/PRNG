@@ -23,13 +23,14 @@
             }
             
             function MSWS(seed) {
-                let x = String(seed * seed); // Middle Squares
-                let w = seed;
+                let x = seed * seed; // Middle Squares
+                let w = seed * Date.now(); // Date.now() to add more salt
                 let s = 362437;
                 
-                x += String((w + s)); // Weyl Sequence 
+                x += (w + s); // Weyl Sequence 
+                x = String(x);
 
-                return x.substring(x.length / 2 - 3, x.length / 2 + 3); // Retrieves the middle values
+                return x.substring(x.length / 2 - 3, x.length / 2 + 3); // Retrieves the middle values of the sum string
             }
             
             const rngInt = Array.from(new Array(n), () => flip() === true ? 1 : 0)
@@ -43,7 +44,9 @@
             return randomNumber;
         }
 
-        console.log(randomNumber(100));
+        setInterval(() => {
+            console.log(randomNumber(1000));
+        }, 500)
     </script>
 </head>
 <body>

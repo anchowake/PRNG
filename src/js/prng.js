@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rngInt = Array.from(new Array(n), () => flip() ? 1 : 0)
     .reduce((bitSum, bit) => bitSum + bit);
     
-    // MSWS 
+    // Middle Square Weyl Sequence
     const seed = () => {
         let x = rngInt * rngInt; // Middle Squares
         const w = rngInt * Date.now(); // Date.now() to add more salt
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         x += (w + s); // Weyl Sequence 
         x = String(x);
         
-        return x.substring((x.length / 2)- 3, (x.length / 2) + 3); // Retrieves the middle values of the sum string
+        return x.substring((x.length / 2) - 3, (x.length / 2) + 3); // Retrieves the middle values of the sum string
     }
 
     rndNumber = Math.floor((seed() / max) * n);

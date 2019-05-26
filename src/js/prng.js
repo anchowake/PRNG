@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function flip() {
     return Math.random() >= 0.5;
   }
+
   function randomNumber(n) {
     const min = 0;
     const max = 1000000;
@@ -35,15 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     return randomNumber;
   }
-    
+  
+  //  Fixed interval for update on the front end
   setInterval( () => {
     document.querySelector('.result_a').innerText = randomNumber(1);
-    document.querySelector('.result_b').innerText = randomNumber(5);
-    document.querySelector('.result_c').innerText = randomNumber(10);
-    document.querySelector('.result_d').innerText = randomNumber(50);
-    document.querySelector('.result_e').innerText = randomNumber(250);
-    document.querySelector('.result_f').innerText = randomNumber(500);
-    document.querySelector('.result_g').innerText = randomNumber(1000001);
-    document.querySelector('.result_h').innerText = randomNumber(1000000);
+    document.querySelector('.result_b').innerText = randomNumber(500);
+    document.querySelector('.result_c').innerText = randomNumber(1000001);
+    document.querySelector('.result_d').innerText = randomNumber(500);
   }, 2000);
 });

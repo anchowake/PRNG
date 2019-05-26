@@ -11,8 +11,28 @@
         }
         
         function randomNumber(n) {
-    
+            const min = 0;
+            const max = 1000000;
+            let randomNumber = 0;
+            
+            if (n >= max || n <= min) {
+                return `The input number must be between: ${min} and ${max}`;
+            } else if (n === min + 1) {
+                return randomNumber;
+            }
+            
+            
+            const rngInt = Array.from(new Array(n), () => flip() === true ? 1 : 0)
+            .reduce((bitSum, bit) => {
+                return bitSum + bit;
+            });
+           
+            console.log(rngInt);
+
+            return randomNumber;
         }
+
+        randomNumber(20);
     </script>
 </head>
 <body>

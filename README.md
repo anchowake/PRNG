@@ -1,6 +1,7 @@
 # Coin Flip - Pseudorandom number generator
 
 My humble attempt to implement a PRNG from scratch 💪
+Demo [HERE](https://anchowake.github.io/PRNG/)
 
 ## References
 

@@ -1,0 +1,23 @@
+body {
+    width: 100%;
+}
+.rndContainer {
+    display:inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    width: 24%;
+    height: 100px;
+    vertical-align: middle;
+    margin: 10px 0;
+}
+
+.rndContainer > p:first-child {
+    font-size: 20px;
+}
+
+p[class ^= "result"] {
+    font-weight: bold;
+    color: gray;
+    font-size: 15px;
+}

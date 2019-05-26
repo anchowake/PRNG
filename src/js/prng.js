@@ -35,4 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     return randomNumber;
   }
+    
+  setInterval( () => {
+    document.querySelector('.result_a').innerText = randomNumber(1);
+    document.querySelector('.result_b').innerText = randomNumber(5);
+    document.querySelector('.result_c').innerText = randomNumber(10);
+    document.querySelector('.result_d').innerText = randomNumber(50);
+    document.querySelector('.result_e').innerText = randomNumber(250);
+    document.querySelector('.result_f').innerText = randomNumber(500);
+    document.querySelector('.result_g').innerText = randomNumber(1000001);
+    document.querySelector('.result_h').innerText = randomNumber(1000000);
+  }, 2000);
 });
